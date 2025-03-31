@@ -6,7 +6,18 @@
 }
 .navigation-buttons{
     display: flex;
-    justify-content: center;
     gap: 15px;
-    margin: 20px;
+    height: 50px;
+    text-align: center;
+    background-color: darkslategray;
+}
+
+.recipe-header{
+    text-align:center;
+    background-color: lightblue;
+}
+
+.nav-button{
+    text-align: center;
+    color: white;
 }

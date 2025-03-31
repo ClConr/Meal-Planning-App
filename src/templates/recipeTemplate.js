@@ -10,11 +10,13 @@ const RecipePage = ({ data }) => {
   };
   return (
     <div className="recipe-container">
-      <h1>{recipe.name}</h1>
       {/* Navigation Buttons */}
       <div className="navigation-buttons">
         <Link to="/recipes" className="nav-button">Recipes Page</Link>
-        <Link to="/" className="nav-button">Main Menu</Link>
+        <Link to="/" className="nav-button">Home</Link>
+      </div>
+      <div className="recipe-header">
+        <h1>{recipe.name}</h1>
       </div>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
