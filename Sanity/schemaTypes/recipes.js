@@ -29,5 +29,6 @@ export default {
             type: 'string',
             title: 'Source'
         }
+
     ]
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import './recipeDetails.css'
 
 const RecipePage = ({ data }) => {
   const recipe = data.sanityRecipes;
@@ -8,8 +9,13 @@ const RecipePage = ({ data }) => {
     return <div>Recipe not found</div>;
   };
   return (
-    <div>
+    <div className="recipe-container">
       <h1>{recipe.name}</h1>
+      {/* Navigation Buttons */}
+      <div className="navigation-buttons">
+        <Link to="/recipes" className="nav-button">Recipes Page</Link>
+        <Link to="/" className="nav-button">Main Menu</Link>
+      </div>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
           <li key={index}>

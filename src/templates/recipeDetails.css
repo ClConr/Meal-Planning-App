@@ -1,0 +1,12 @@
+.recipe-container{
+    color: black;
+}
+.back-button{
+    color: black;
+}
+.navigation-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px;
+}
