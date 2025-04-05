@@ -1,0 +1,56 @@
+@use "./variables.scss";
+
+// Color Pallette
+// #F9F7F7 off-white
+// #DBE2EF light blue
+// #3F72AF blue
+// #112D4E darkblue
+
+
+body {
+    line-height: 24px;
+    color: #666;
+}
+
+.header {
+    color: #112D4E;
+    
+}
+.recipeButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+  
+    //height: 600px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+.recipeButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+
+
+.recipeImage {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    @media (max-width: 1440px){
+        //height: 300px;
+    }
+    @media (max-width: 1024px){
+        width: 200px
+    }
+    @media (max-width: 770px){
+        width: 200px;
+        height: 200px;
+    }
+  }

@@ -1,0 +1,16 @@
+$prefix: "bs-" !default;
+
+$fontStack: sans-serif, serif;
+$primaryColor: #F9F7F7;
+$secondaryColor: #DBE2EF;
+$tertiaryColor: #3F72AF;
+$quaternaryColor: #112D4E;
+
+@use "node_modules/bootstrap-utilities/bootstrap-utilities";
+
+
+// Color Pallette
+// #F9F7F7 off-white
+// #DBE2EF light blue
+// #3F72AF blue
+// #112D4E darkblue

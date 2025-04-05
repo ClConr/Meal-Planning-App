@@ -1,0 +1,13 @@
+@use "./variables.scss";
+
+// Color Pallette
+// #F9F7F7 off-white
+// #DBE2EF light blue
+// #3F72AF blue
+// #112D4E darkblue
+
+.body {
+    background-color: $primaryColor;
+    color: $quaternaryColor;
+    margin: 10px;
+}

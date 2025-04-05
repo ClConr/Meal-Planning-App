@@ -11,7 +11,7 @@ const Navigation = () => {
                 <Nav className="mx-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#about">About</Nav.Link>
-                    <Nav.Link href="/recipes">Recipe Explorer</Nav.Link>
+                    <Nav.Link href="../pages/recipes">Recipe Explorer</Nav.Link>
                 </Nav>
             </NavBar.Collapse>
         </NavBar>

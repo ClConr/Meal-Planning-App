@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 import heroImage from '../images/heroImage.png'
 import logo from '../images/PlateItUpLogo.png'
