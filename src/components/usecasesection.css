@@ -1,34 +1,33 @@
+.usecasetitle {
+    color: #f9f7f7;
+    font-family: var(--font-sans);
+}
+
 .usecasebutton {
     color: #3f72af;
     background-color: #f9f7f7;
 }
 
+.usecasetext {
+    color: #f9f7f7;
+    font-family: var(--font-sans);
+    font-size: var(--font-lg);
+    width: 100%;
+}
+
+/* Add a container for the text to prevent layout shifts */
+.text-container {
+    position: relative;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+
 .usecaseimage {
-    width: 80%;      /* or any percentage you prefer */
+    width: 80%;
     max-width: 500px; 
     height: auto;    /* keeps the aspect ratio */
     margin: 0 auto;  /* centers the image if it's smaller than its container */
     border-radius: 80px;
     box-shadow: 20px 20px 101px 2px rgba(0, 0, 0, 0.552);
 }
-
-.fade-enter {
-    opacity: 0;
-    transform: translateY(10px);
-}
-.fade-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-}
-.fade-exit {    
-    opacity: 1;
-    transform: translateY(0);
-}
-.fade-exit-active {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-}
-  
-  

@@ -1,19 +1,13 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/Layout"
 
-import heroImage from '../images/heroImage.png'
 import logo from '../images/PlateItUpLogo.png'
 import HowItWorksCarousel from "../components/howworkscarousel"
 import QAaccordion from "../components/QAaccordian"
 import UseCaseSection from "../components/usecasesection"
 
-const links = [
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 export default function HomePage() {
   return (

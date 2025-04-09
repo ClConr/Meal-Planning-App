@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form } from 'react-bootstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Container, Row, Col } from 'react-bootstrap';
+import { motion, AnimatePresence } from 'framer-motion'
 import './usecasesection.css'
 
 import MobileImg from '../images/mobile.png';
@@ -11,18 +11,21 @@ const useCases = [
   {
     key: 'mobile',
     title: 'Mobile',
+    subtitle: 'Seamless Mobile Integration',
     text: 'Plan your meals, post your favorite dishes, and check calorie counts on the go. Whether you’re at the store or in the kitchen, everything you need is right in your pocket.',
     image: MobileImg,
   },
   {
     key: 'web',
     title: 'Web',
+    subtitle: 'A Powerful Web Dashboard',
     text: 'Enjoy a bigger workspace for serious planning. Browse, share, and organize recipes with ease — perfect for meal preppers and multitaskers alike.',
     image: WebImg,
   },  
   {
     key: 'paper',
     title: 'Hard Copy',
+    subtitle: 'Return To Tradition',
     text: 'Prefer the old-school charm of pen and paper? Print out meal plans, shopping lists, or shareable recipes for the fridge, the binder, or your grandma’s cookbook.',
     image: PaperImg,
   },
@@ -32,77 +35,85 @@ const UseCaseSection = () => {
   const [selectedCase, setSelectedCase] = useState('mobile');
   const currentCase = useCases.find((u) => u.key === selectedCase);
 
+  const textVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
+  const imageVariants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.9 },
+  };
+
+  const transitionSettings = {
+    duration: 0.4,
+    ease: "easeInOut",
+  };
+
   return (
-    <Container className="my-5">
-      <h2 className="text-center mb-4">Flexible by Design</h2>
-      
+    <Container className="my-5 use-case-section">
+      <h1 className="text-center mb-4 usecasetitle">Flexible by Design</h1>
       {/* Button Group for Use Case Selection */}
       <div className="d-flex justify-content-center mb-4">
         <div className="btn-group usecasebutton" role="group" aria-label="Use case toggle">
-          <input
-            type="radio"
-            className="btn-check"
-            name="usecase"
-            id="btnradio1"
-            autoComplete="off"
-            checked={selectedCase === 'mobile'}
-            onChange={() => setSelectedCase('mobile')}
-          />
-          <label className="btn btn-outline-primary" htmlFor="btnradio1">
-            Mobile
-          </label>
-
-          <input
-            type="radio"
-            className="btn-check"
-            name="usecase"
-            id="btnradio2"
-            autoComplete="off"
-            checked={selectedCase === 'web'}
-            onChange={() => setSelectedCase('web')}
-          />
-          <label className="btn btn-outline-primary" htmlFor="btnradio2">
-            Web
-          </label>
-
-          <input
-            type="radio"
-            className="btn-check"
-            name="usecase"
-            id="btnradio3"
-            autoComplete="off"
-            checked={selectedCase === 'paper'}
-            onChange={() => setSelectedCase('paper')}
-          />
-          <label className="btn btn-outline-primary" htmlFor="btnradio3">
-            Paper
-          </label>
+          {useCases.map((uc) => (
+            <React.Fragment key={uc.key}>
+              <input
+                type="radio"
+                className="btn-check"
+                name="usecase"
+                id={`btnradio-${uc.key}`}
+                autoComplete="off"
+                checked={selectedCase === uc.key}
+                onChange={() => setSelectedCase(uc.key)}
+              />
+              <label className="btn btn-outline-primary" htmlFor={`btnradio-${uc.key}`}>
+                {uc.title}
+              </label>
+            </React.Fragment>
+          ))}
         </div>
       </div>
       
-      {/*Static Image (FIX ME: ANIMATION NO WORK FOR PICS)*/} 
-      <Row className="align-items-center">
-        <Col md={6} className="text-center">
-          <img
-            src={currentCase.image}
-            alt={currentCase.title}
-            className="img-fluid usecaseimage"
-          />
+      {/* Row for Image and Text*/}
+      {/* FIX ME: FIX THE BOX BEHIND THE IMAGE THAT HANDLES THE TRANSITION. I NEED TO FILL IT OUT WITH THE IMAGE */}
+      <Row className="align-items-center justify-content-center">
+        {/*Animated Image*/} 
+        <Col md={6} className="text-center mb-4 mb-md-0 usecaseimage">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentCase.key + '-image'} // Unique key is crucial for AnimatePresence
+              src={currentCase.image}
+              alt={currentCase.subtitle}
+              variants={imageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={transitionSettings}
+              className="img-fluid usecaseimage"
+            />
+          </AnimatePresence>
         </Col>
       {/* Animated Text Column with Transition */}
-        <Col md={6}>
-          <TransitionGroup>
-            <CSSTransition  
-              key={currentCase.key}
-              timeout={500}
-              classNames="fade"
-            >
-              <div>
-                <h3>{currentCase.title}</h3>
+        <Col md={6} className="usecasetext">
+          <div className="text-container">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentCase.key + '-text'} // Unique key is crucial
+                variants={textVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={transitionSettings}
+                className="use-case-text-content" // Added class for styling
+              >
+                <h3>{currentCase.subtitle}</h3>
                 <p>{currentCase.text}</p>
-              </div>
-            </CSSTransition>
-          </TransitionGroup>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </Col>
       </Row>
     </Container>
