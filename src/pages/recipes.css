@@ -1,11 +1,11 @@
-.recipes-grid {
+.recipes-grid { /*Displays the buttons in a grid format */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
   }
   
-  .recipe-button {
+  .recipe-button { /*Styling of the recipe button, added a background shadow on the button for affect */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,19 +22,19 @@
     cursor: pointer;
   }
   
-  .recipe-button:hover {
+  .recipe-button:hover { /*Added a hover affect for the button so the background shadow increases */
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
   
-  .recipe-image {
+  .recipe-image { /*Styling for the images on the recipes buttons */
     width: 100%;
     height: 70%;
     background-size: cover;
     background-position: center;
   }
   
-  .recipe-name {
+  .recipe-name { /*Styling for name on recipes button */
     text-align: center;
     font-weight: bold;
     color: #333;
@@ -42,14 +42,14 @@
     font-size: 16px;
   }
 
-  .search-bar{
+  .search-bar{ /*Styles the search bar where text is black*/
     text-align: center;
     color: black;
   }
 
-  .animated-header{
-    text-align: center;
-    font-weight: bold;
-    color: black;
-    background-color: lightblue;
+  .animated-header{ /*The header of the recipe's page */
+    text-align: center; /*Recipe Page header is in the center of page */
+    font-weight: bold; /*Text is bold*/
+    color: black; /*Text is black*/
+    background-color: lightblue; /*Made the line for the main page for recipes blue*/
   }

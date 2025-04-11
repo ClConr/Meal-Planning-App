@@ -1,10 +1,10 @@
-.recipe-container{
+.recipe-container{ /*Makes the text black*/
     color: black;
 }
-.back-button{
-    color: black;
+.back-button{ /*Used to make text black for home button on main recipes page*/
+    color: black; 
 }
-.navigation-buttons{
+.navigation-buttons{ /*Makes the navigation line where the navigation links are a darkslate gray */
     display: flex;
     gap: 15px;
     height: 50px;
@@ -12,12 +12,12 @@
     background-color: darkslategray;
 }
 
-.recipe-header{
+.recipe-header{ /*Makes the header title for the individual recipe page line blue and aligns the text in the center*/
     text-align:center;
     background-color: lightblue;
 }
 
-.nav-button{
+.nav-button{  /*Makes the link buttons white in the individual recipe pages*/
     text-align: center;
     color: white;
 }
